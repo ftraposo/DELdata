@@ -1,0 +1,23 @@
+Package: DELdata
+Title: DELdata: A R package to download Development Engagement Lab datasets
+Version: 0.0.0.9000
+Authors@R: 
+    person("Felipe", "Torres", , "f.torres-raposo@lse.ac.uk", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0000-5520-6303"))
+Description: This R package provides easy access to datasets collected and curated by the Development Engagement Lab (DEL). The package allows users to download data directly from Dataverse and read it into R for further analysis.
+License: MIT + file LICENSE
+Imports:
+    dataverse,
+    haven,
+    stringi
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+Depends: 
+    R (>= 2.10)
+LazyData: true
+

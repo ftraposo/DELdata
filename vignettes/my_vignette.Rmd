@@ -1,0 +1,35 @@
+---
+title: "DEL data"
+output: 
+  html_document:
+    number_sections: true
+    theme: flatly
+    toc: true
+    toc_float: true
+vignette: >
+  %\VignetteIndexEntry{my_vignette}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+# USAGE
+
+# ARGUMENTS
+
+This R data package allows to download DEL's data 
+```{r setup}
+library(DELdata)
+```
+
+The data will be loaded to your environment following this name format: 
+
+
+# AUTHOR
+
+# REFERENCES
