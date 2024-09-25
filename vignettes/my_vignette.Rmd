@@ -29,6 +29,10 @@ library(DELdata)
 
 The data will be loaded to your environment following this name format: 
 
+```{r}
+get_del
+```
+
 
 # AUTHOR
 
