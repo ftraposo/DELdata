@@ -20,6 +20,8 @@ knitr::opts_chunk$set(
 ```
 # USAGE
 
+Public support is crucial for shaping effective development and foreign aid policies. The Development Engagement Lab (DEL) has conducted comprehensive surveys in France, Germany, Great Britain, and the U.S. to track and analyse public attitudes on foreign aid and engagement with sustainable development. In this R package we provide access to the DEL's data. This data comprises nationally representative panel data (2019 - 2023), repeated cross-sections (2019 - 2024), and several foreign aid subject-specific datasets. DEL has made available 87 datasets totalling 246,352 observations from 129,128 unique respondents. The DEL data will enable scholars and policymakers to produce valuable insights that will generate a better understanding of how citizens think about, and engage with, global poverty and sustainable development.
+
 # ARGUMENTS
 
 This R data package allows to download DEL's data 
@@ -27,8 +29,7 @@ This R data package allows to download DEL's data
 library(DELdata)
 ```
 
-The data will be loaded to your environment following this name format: 
-
+The data will be loaded to your environment following this name format:data_COUNTRY_TYPE_YEAR_WAVE.  
 
 # AUTHOR
 
