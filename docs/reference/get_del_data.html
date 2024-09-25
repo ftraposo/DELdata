@@ -82,10 +82,565 @@
     <h2>Examples</h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">get_del_data</span><span class="op">(</span>country <span class="op">=</span> <span class="st">'France'</span>, year <span class="op">=</span> <span class="st">'2020'</span>, type <span class="op">=</span> <span class="st">'Panel'</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Processing DOI: 10.7910/DVN/KWTWCF</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> Error occurred while fetching DOI: 10.7910/DVN/KWTWCF</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> lexical error: invalid char in json text.</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                                        &lt;!DOCTYPE HTML PUBLIC "-//IETF/</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span>                      (right here) ------^</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Successfully downloaded and saved as: data_France_Panel_2020_1</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> Structure of df for DOI 10.7910/DVN/KWTWCF:</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> tibble [6,001 × 231] (S3: tbl_df/tbl/data.frame)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ GUNQID                    : num [1:6001] 1.21e+11 1.21e+11 1.21e+11 1.21e+11 1.21e+11 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "Unique Bill and Melinda Gates Foundation Global Identifier for YouGov Panellists"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ age                       : dbl+lbl [1:6001] 40, 28, 71, 51, 72, 65, 58, 69, 65, 55, 71, 70, 39, 7...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "age"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F11.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 11</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] -9 -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Not Asked" "Skipped"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ gender                    : dbl+lbl [1:6001] 2, 1, 1, 2, 1, 1, 2, 2, 1, 2, 2, 2, 2, 1, 1, 1, 2, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Genre"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Un homme" "Une femme" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ Grouped_Region_2014       : dbl+lbl [1:6001] 5, 4, 5, 1, 3, 2, 2, 3, 4, 5, 2, 2, 2, 3, 1, 3, 3, 4,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Grouped Region/ Région UDA5"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:7] 1 2 3 4 5 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:7] "Nord-Est" "Nord-Ouest" "Region Parisienne" "Sud-Est" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ NEW_regions_2015          : dbl+lbl [1:6001]  2, 12,  2,  1,  8,  6,  6,  8,  3,  2, 11,  6, 11,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "SEC/ Region (nouvelle)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F2.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:14] 1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:14] "Alsace,Champagne-Ardenne,Lorraine" "Aquitaine, Limousin, Poitou-Charentes" "Auvergne, Rhône-Alpes" "Normandie" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ Presidential_vote17       : dbl+lbl [1:6001]   2,   5,  11, 977,   7,   5,   2,   9,   9,  10,   7...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Avez-vous voté lors du premier tour des élections présidentielles de 2017, et si oui, pour qui avez-vous voté ?"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F3.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:15] 1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:15] "Non, je n’ai pas voté, je n’avais pas encore 18 ans" "Non, je n’ai pas voté" "Je ne me souviens plus si j’ai voté ou non" "Oui, j’ai voté pour Benoît Hamon" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ Presidential_vote17_round2: dbl+lbl [1:6001]   2,   4,   6, 977,   2,   4,   2,   5,   5,   6,   4...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Avez-vous voté lors du second tour des élections présidentielles de 2017, et si oui, pour qui avez-vous voté ?&lt;"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F3.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 3</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:10] 1 2 3 4 5 6 7 977 998 999</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:10] "Non, je n’ai pas voté, je n’avais pas encore 18 ans" "Non, je n’ai pas voté" "Je ne me souviens plus si j’ai voté ou non" "Oui, j’ai voté pour Emmanuel Macron" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ education                 : dbl+lbl [1:6001] 6, 5, 5, 5, 5, 6, 5, 5, 5, 5, 6, 2, 7, 7, 6, 5, 1, 5,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Education"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F2.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 18</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:11] 1 2 3 4 5 6 7 8 9 98 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:11] "Aucun diplôme" "Certificat d'étude" "Brevet des collèges" "Diplôme de l'enseignement technique court (CAP, BEP ou équivalent)" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ income                    : dbl+lbl [1:6001]  3,  4, 15,  5,  3,  6,  4,  2,  4,  3, 16,  4,  5,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Household income"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F2.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:18] 1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:18] "Moins de 15 000€" "15 000€ - 19 999€" "20 000€ - 29 999€" "30 000€ - 39 999€" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ pb4_politicalscale        : dbl+lbl [1:6001] 7, 3, 5, 6, 4, 3, 7, 6, 5, 2, 4, 2, 4, 3, 2, 2, 4, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Politiquement, vous situez-vous… ? &lt;br&gt;&lt;i&gt;Une seule réponse possible.&lt;/i&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:9] 1 2 3 4 5 6 7 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:9] "Très à gauche" "A gauche" "Au centre" "A droite" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ ppol_partyid              : dbl+lbl [1:6001] 977,   5,  14, 966,  10,   8, 966, 966,  14, 966,  13...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "De quel parti politique vous sentez-vous _le plus proche_ ?  &lt;br&gt;&lt;i&gt;Une seule réponse possible.&lt;/i&gt;"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F3.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 16</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:19] 1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:19] "Lutte Ouvrière (LO)" "Nouveau Parti Anticapitaliste (NPA)" "Le Front de Gauche (Parti Communiste (PC), le Parti de gauche (PG), la gauche unitaire (GU)" "La France insoumise (LFI)" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ DoneW12                   : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Completed Panel Wave 1,2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] 1 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Yes" "No"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ DoneW1                    : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label      : chr "Completed Panel Wave 1"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss: chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels     : Named num [1:2] 1 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Yes" "No"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ DoneW2                    : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label      : chr "Completed Panel Wave 2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss: chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels     : Named num [1:2] 1 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Yes" "No"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ WeightPanelW2             : num [1:6001] 0.462 1.209 0.773 1.336 1.615 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "Weight - Panel Wave 2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ WeightPanelW12            : num [1:6001] 0.496 1.491 0.603 1.183 1.549 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "Weight - Panel Wave 1,2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 10</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_1               : dbl+lbl [1:6001] 997,   8,   8,   2,   8,   8,   1,   8,   8,   2,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Le changement climatique, l'environnement, la biodiversité, la pollution"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_2               : dbl+lbl [1:6001] 997,   8,   3,   8,   8,   8,   8,   8,   8,   8,   3...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les inégalités entre les riches et les pauvres"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_3               : dbl+lbl [1:6001] 997,   2,   8,   8,   8,   3,   2,   2,   8,   8,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Le populisme, le nationalisme, l'extrémisme politique"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_4               : dbl+lbl [1:6001] 997,   1,   8,   8,   8,   8,   8,   8,   8,   8,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les nouvelles technologies, la robotisation, l'intelligence artificielle"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_5               : dbl+lbl [1:6001] 997,   3,   2,   8,   1,   8,   8,   1,   3,   8,   2...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les flux migratoires, les réfugiés"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_6               : dbl+lbl [1:6001] 997,   8,   8,   3,   3,   8,   8,   8,   1,   1,   1...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les guerres, les conflits, le terrorisme"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_7               : dbl+lbl [1:6001] 997,   8,   8,   1,   8,   8,   8,   8,   8,   3,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "L'éducation, la santé, l'eau potable et la faim dans les pays en voie de développement"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_8               : dbl+lbl [1:6001] 997,   8,   1,   8,   2,   1,   3,   8,   8,   8,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les crises économiques, le chômage, le pouvoir d’achat"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_9               : dbl+lbl [1:6001] 997,   8,   8,   8,   8,   8,   8,   3,   8,   8,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les fausses nouvelles (ou fake news), la désinformation"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track1_w2_10              : dbl+lbl [1:6001] 997,   8,   8,   8,   8,   2,   8,   8,   2,   8,   8...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Les grandes pandémies et les maladies à l’échelle mondiale"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Ranked first" "Ranked second" "Ranked third" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track2_w2                 : dbl+lbl [1:6001] 3, 4, 3, 3, 4, 2, 3, 3, 3, 2, 4, 2, 2, 2, 3, 3, 3, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Avez-vous déjà entendu parler ou lu à propos des Objectifs de développement durable des Nations Unies ?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:6] 1 2 3 4 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:6] "Oui, et je sais de quoi il s'agit" "Oui, mais je ne sais pas vraiment de quoi il s'agit" "Non" "Je ne sais pas" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track3_w2                 : dbl+lbl [1:6001] 3, 6, 1, 5, 1, 3, 6, 6, 6, 4, 4, 5, 3, 3, 4, 5, 6, 4,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "La communauté internationale s'est engagée à réduire la pauvreté, les inégalités, la faim, l'accès inégal à la "| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:8] 1 2 3 4 5 6 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:8] "La France fait bien trop d'efforts" "La France fait un peu trop d'efforts" "La France fait suffisamment d'efforts" "La France devrait faire un peu plus d'efforts" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track4_w2                 : dbl+lbl [1:6001] 3, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "S’agissant de la pauvreté dans le monde et du développement des pays pauvres, avez-vous fait un don à une assoc"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Oui" "Non" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track5_w2                 : dbl+lbl [1:6001] 2, 6, 4, 3, 3, 3, 3, 3, 3, 2, 1, 1, 3, 3, 3, 1, 3, 3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Parmi les propositions suivantes, laquelle décrit le mieux votre sentiment vis-à-vis de la pauvreté dans les pa"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:8] 1 2 3 4 5 6 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:8] "Très préoccupé(e)" "Assez préoccupé(e)" "Pas d'opinion tranchée sur la question" "Pas très préoccupé(e)" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track6_w2                 : dbl+lbl [1:6001] 12, 10,  3, 10,  5,  5, 12,  2, 12,  6, 12,  4,  4,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Concernant l'aide internationale accordée aux pays en voie de développement, veuillez indiquer dans quelle mesu"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F2.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:14] 0 1 2 3 4 5 6 7 8 9 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:14] "0 – Ne doit pas du tout contribuer à l'aide internationale" "1" "2" "3" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track7_w2                 : dbl+lbl [1:6001] 3, 6, 4, 4, 3, 4, 6, 5, 6, 2, 3, 3, 4, 3, 6, 1, 6, 3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Sur les 2500 milliards d’euros de son Produit Intérieur Brut (PIB) total, le Gouvernement français consacre act"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:8] 1 2 3 4 5 6 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:8] "Augmenter fortement" "Augmenter un peu" "Ne pas modifier" "Diminuer un peu" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2                 : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Selon vous, quelle différence chacune des entités suivantes peut-elle faire dans la réduction de la pauvreté da"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2_1               : num [1:6001] 11 0 0 5 11 0 2 11 0 5 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2_2               : num [1:6001] 11 0 2 5 1 5 2 11 5 8 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2_3               : num [1:6001] 11 0 3 5 5 6 7 11 5 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2_4               : num [1:6001] 11 10 3 5 5 3 2 11 0 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track8_w2_5               : num [1:6001] 11 0 3 5 6 3 7 11 5 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track9_w2                 : dbl+lbl [1:6001] 11, 11,  3,  5, 11,  5, 11,  0, 11,  6,  6,  5,  5,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label      : chr "Dans l'ensemble, sur une échelle de 0 à 10, sur laquelle 0 signifie « Très inefficace » et 10 signifie « Très e"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss: chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels     : Named num [1:14] 0 1 2 3 4 5 6 7 8 9 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:14] "0 – Très inefficace" "1" "2" "3" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ track10_w2                : dbl+lbl [1:6001] 3, 6, 4, 3, 5, 3, 2, 5, 3, 1, 3, 2, 3, 5, 2, 2, 6, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Veuillez indiquer dans quelle mesure vous êtes en accord ou en désaccord avec la phrase suivante : &lt;br/&gt;&lt;br/&gt;To"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:8] 1 2 3 4 5 6 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:8] "Tout à fait d'accord" "D'accord" "Ni d'accord ni pas d'accord" "Pas d'accord" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage1_w2                : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Parmi les activités suivantes relatives à la pauvreté dans le monde et au développement des pays pauvres, lesqu"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage1a_w2               : dbl+lbl [1:6001] 2, 1, 1, 2, 2, 1, 2, 1, 1, 1, 1, 2, 1, 1, 2, 1, 2, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Lire un article, regarder ou écouter un reportage sur ce sujet (en ligne ou hors ligne)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Je l'ai fait" "Je ne l'ai pas fait" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage1b_w2               : dbl+lbl [1:6001] 2, 1, 1, 2, 3, 1, 2, 1, 1, 2, 1, 2, 1, 2, 2, 1, 2, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Discuter de ce sujet avec des amis, des membres de votre famille ou d'autres"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Je l'ai fait" "Je ne l'ai pas fait" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage1c_w2               : dbl+lbl [1:6001] 2, 3, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Partager/transmettre un article ou des informations sur ce sujet (en ligne ou hors ligne)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Je l'ai fait" "Je ne l'ai pas fait" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage2_w2                : dbl+lbl [1:6001] NA,  1,  3, NA, NA,  2, NA,  2,  2,  2,  2, NA,  3,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "S’agissant des actualités que vous avez lues/vues/partagées ou des discussions que vous avez eues à propos de l"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Plus positif que négatif" "Plus négatif que positif" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage3_w2                : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Parmi les activités suivantes relatives à la pauvreté dans le monde et au développement de pays pauvres, lesque"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage3a_w2               : dbl+lbl [1:6001] 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Faire du bénévolat pour une organisation ou une association caritative travaillant sur ces questions, en France"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Je l'ai fait" "Je ne l'ai pas fait" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage3b_w2               : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Devenir membre, suivre, aimer ou vous abonner à la newsletter d'une association caritative ou d’une ONG interna"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Je l'ai fait" "Je ne l'ai pas fait" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage4_w2                : dbl+lbl [1:6001] 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Parmi les actions suivantes, lesquelles avez-vous réalisé au cours des 12 derniers mois pour soutenir ou vous o"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage4a_w2               : dbl+lbl [1:6001] 3, 1, 3, 3, 3, 3, 3, 3, 3, 1, 1, 3, 3, 3, 3, 1, 3, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Exprimer votre opinion sur cette question (p. ex. signer une pétition, écrire un blog, etc.)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:6] 1 2 3 4 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:6] "Je l'ai fait pour **soutenir** les efforts visant à régler la question de la pauvreté dans le monde" "Je l'ai fait pour **m'opposer** aux efforts visant à régler la question de la pauvreté dans le monde" "Je ne l'ai pas fait" "Je ne sais pas" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage4b_w2               : dbl+lbl [1:6001] 3, 1, 3, 3, 3, 3, 3, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Contacter un député ou un autre élu (en personne, par téléphone, par courrier ou par le biais de Twitter, Faceb"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:6] 1 2 3 4 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:6] "Je l'ai fait pour **soutenir** les efforts visant à régler la question de la pauvreté dans le monde" "Je l'ai fait pour **m'opposer** aux efforts visant à régler la question de la pauvreté dans le monde" "Je ne l'ai pas fait" "Je ne sais pas" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage4c_w2               : dbl+lbl [1:6001] 3, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Participer à une manifestation, un rassemblement, une marche ou à un autre événement sur cette question"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:6] 1 2 3 4 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:6] "Je l'ai fait pour **soutenir** les efforts visant à régler la question de la pauvreté dans le monde" "Je l'ai fait pour **m'opposer** aux efforts visant à régler la question de la pauvreté dans le monde" "Je ne l'ai pas fait" "Je ne sais pas" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ engage4d_w2               : dbl+lbl [1:6001] 3, 1, 3, 3, 3, 1, 3, 3, 3, 1, 3, 3, 3, 3, 3, 3, 3, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Acheter des produits ou boycotter des produits/services en rapport avec cette question (p. ex. acheter des prod"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:6] 1 2 3 4 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:6] "Je l'ai fait pour **soutenir** les efforts visant à régler la question de la pauvreté dans le monde" "Je l'ai fait pour **m'opposer** aux efforts visant à régler la question de la pauvreté dans le monde" "Je ne l'ai pas fait" "Je ne sais pas" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don1_w2                   : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Veuillez estimer à quelle fréquence en moyenne vous avez fait un don à des associations caritatives ou ONG œuvr"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:7] 1 2 3 4 5 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:7] "Plus d'une fois par mois" "Une fois par mois" "Moins d'une fois par mois" "Une seule fois au cours des 12 derniers mois" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don2_w2                   : dbl+lbl [1:6001]  NA,  NA,  NA,  NA,  NA,  NA,  NA,  NA,  NA,  NA, 120...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Veuillez estimer le montant total dont vous avez fait don à des associations caritatives ou ONG œuvrant dans le"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F13.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 13</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:2] -9 -8</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:2] "Not Asked" "Skipped"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don3_w2                   : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  3, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Parmi les méthodes suivantes, laquelle êtes-vous **le plus susceptible** d'utiliser, le cas échéant, pour faire"| __truncated__</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F2.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 2</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:14] 1 2 3 4 5 6 7 8 9 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:14] "Faire un don lorsqu'on vous approche directement (p. ex. dans la rue, dans une gare)" "Parrainer une personne ou soutenir un événement organisé en faveur d'une association caritative (événement sportif," "Effectuer un paiement régulier à une association caritative par prélèvement automatique ou virement permanent" "Faire un don dans un lieu de culte" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don3_w2other              : chr [1:6001] "__NA__" "__NA__" "__NA__" "__NA__" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "None"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "A255"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_1                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Cela fait une différence"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_2                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Un(e) ami(e), un proche ou un(e) collègue m'a demandé de faire un don ou de le/la parrainer"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_3                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Faire un don à une ONG me donne un sentiment de satisfaction"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_4                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  1, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je crois en la cause représentée par l'ONGet au travail qu'elle effectue"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_5                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "J'avais suffisamment d'argent et pouvais me permettre de faire un don"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_6                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Quelqu'un avait besoin d'aide"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_7                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "La réputation de l’ONG"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_8                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "L’appel au don était intéressant et convaincant"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_9                 : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Faire un don était facile"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_10                : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Quelqu'un que je respecte ou que j’admire a soutenu cet appel au don"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_11                : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Autre"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2_12                : dbl+lbl [1:6001] NA, NA, NA, NA, NA, NA, NA, NA, NA, NA,  2, NA, NA, N...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne sais pas"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don4_w2other              : chr [1:6001] "__NA__" "__NA__" "__NA__" "__NA__" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "None"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "A255"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don5_w2                   : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  1,  3,  2,  2,  1, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Avez-vous *déjà* fait un don à une association caritative ou ONG œuvrant au développement par le passé ?"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:5] 1 2 3 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:5] "Oui" "Non" "Je ne sais pas" "Skipped" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_1                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  2,  1, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne pouvais pas me permettre de faire un don"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_2                 : dbl+lbl [1:6001] NA, NA,  2,  2,  1,  2,  2,  2,  2,  2, NA,  1,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "La façon dont mon argent aurait pu avoir un impact sur la cause n'était pas claire"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_3                 : dbl+lbl [1:6001] NA, NA,  1,  1,  1,  2,  2,  2,  2,  2, NA,  2,  1,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je pense que trop d'argent est utilisé pour les frais administratifs des ONG plutôt que pour la cause elle-même"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_4                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  1,  1,  2,  2, NA,  2,  1,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "J'ai fait un don pour d'autres causes et à d’autres organisations parce je trouvais qu'elles en valaient plus la peine"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_5                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  1,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je pense qu'il incombe au gouvernement de soutenir cette cause par le biais de l'impôt"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_6                 : dbl+lbl [1:6001] NA, NA,  2,  2,  1,  2,  2,  1,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne fais pas confiance aux ONG œuvrant au développement des pays pauvres"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_7                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "On ne m'a pas demandé ou je n'ai pas eu l'occasion de faire un don"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_8                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  1,  2,  1, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je n'aime pas les appels aux dons"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_9                 : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne me sens pas responsable de participer à la lutte contre la pauvreté dans les pays en développement"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_10                : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  1,  2,  2,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "J'ai déjà assez donné"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_11                : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Autre"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2_12                : dbl+lbl [1:6001] NA, NA,  2,  2,  2,  2,  2,  2,  2,  2, NA,  2,  2,  ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne sais pas"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ don6_w2other              : chr [1:6001] "__NA__" "__NA__" "__NA__" "__NA__" ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "label")= chr "None"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "A255"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "display_width")= int 255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_1                  : dbl+lbl [1:6001] 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Heureux(-se), déterminé(e), excité(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_2                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Plein(e) d'espoir, enthousiaste, optimiste"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_3                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Content(e), satisfait(e), ravi(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_4                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Détendu(e), serein(e), en paix avec vous-même"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_5                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Paisible, tranquille, décontracté(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_6                  : dbl+lbl [1:6001] 2, 2, 1, 1, 2, 1, 2, 2, 1, 2, 2, 2, 2, 1, 2, 2, 2, 1,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Indifférent(e), réservé(e), calme"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_7                  : dbl+lbl [1:6001] 2, 2, 1, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Exaspéré(e), lassé(e), fatigué(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_8                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Triste, morose, déprimé(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_9                  : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Anxieux(-se), malheureux(-se), insatisfait(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_10                 : dbl+lbl [1:6001] 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "En colère, bouleversé(e), contrarié(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_11                 : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Irrité(e), perturbé(e), agité(e)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_12                 : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Fier(-ère), encouragé(e), actif(-ve)"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_13                 : dbl+lbl [1:6001] 2, 2, 2, 2, 2, 2, 1, 1, 2, 2, 2, 1, 1, 2, 2, 2, 2, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Aucune des réponses ci-dessus"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ emt_w2_14                 : dbl+lbl [1:6001] 1, 2, 2, 2, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 1, 2,...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ label        : chr "Je ne sais pas"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ format.spss  : chr "F1.0"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ display_width: int 1</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    ..@ labels       : Named num [1:4] 1 2 8 9</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>    .. ..- attr(*, "names")= chr [1:4] "Yes" "No" "Skipped" "Not Asked"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  $ purpose_w2                : num [1:6001] 5 0 11 5 11 5 11 0 5 10 ...</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   ..- attr(*, "format.spss")= chr "F8.2"</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>   [list output truncated]</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> list()</span>
 </code></pre></div>
     </div>
