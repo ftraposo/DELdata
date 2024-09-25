@@ -32,4 +32,13 @@ The data will be loaded to your environment following this name format:
 
 # AUTHOR
 
+Development Engagement Lab 
+
 # REFERENCES
+
+R Package: dataverse. (2024). dataverse: An R package for working with the Dataverse repository. R package version 0.16.0. Retrieved from https://cran.r-project.org/web/packages/dataverse/index.html
+
+Wickham H, Miller E, Smith D (2023). haven: Import and Export 'SPSS', 'Stata' and 'SAS' Files. R package version 2.5.4, https://github.com/tidyverse/haven, https://github.com/WizardMac/ReadStat, https://haven.tidyverse.org.
+
+Gagolewski M (2022). “stringi: Fast and portable character string processing in R.” Journal of Statistical Software, 103(2), 1–59. doi:10.18637/jss.v103.i02.
+

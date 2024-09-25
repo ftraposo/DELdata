@@ -16,7 +16,7 @@
 #' get_del_data(country = 'France', year = '2020', type = 'Panel')
 
 get_del_data <- function(country = NULL, year = NULL, type = NULL) {
-  # Check if required packages are installed
+
   if (!requireNamespace("dataverse", quietly = TRUE)) {
     stop("Please install the 'dataverse' package.")
   }
@@ -25,7 +25,6 @@ get_del_data <- function(country = NULL, year = NULL, type = NULL) {
     stop("Please install the 'stringi' package.")
   }
 
-  # Filter 'dois' based on input parameters
   if (!is.null(country)) {
     dois <- dois[dois$country %in% country, ]
   }
@@ -38,7 +37,7 @@ get_del_data <- function(country = NULL, year = NULL, type = NULL) {
     dois <- dois[dois$type %in% type, ]
   }
 
-  result_list <- list()  # Create an empty list to store data frames
+  result_list <- list()
 
   for (i in seq_len(nrow(dois))) {
     filename <- dois$label[i]
@@ -46,8 +45,7 @@ get_del_data <- function(country = NULL, year = NULL, type = NULL) {
 
     message("Processing DOI: ", doi)
 
-    # Download the dataset
-    # Attempt to download the dataset
+
     df <- suppressWarnings({
       response <- tryCatch({
         dataverse::get_dataframe_by_name(
@@ -63,7 +61,7 @@ get_del_data <- function(country = NULL, year = NULL, type = NULL) {
     })
 
     if (is.null(df)) {
-      next  # Skip to the next iteration if df is NULL
+      next
     }
 
     df_name <- paste0("data_",
@@ -74,10 +72,10 @@ get_del_data <- function(country = NULL, year = NULL, type = NULL) {
     assign(df_name, df, envir = .GlobalEnv)
     message("Successfully downloaded and saved as: ", df_name)
     message("Structure of df for DOI ", doi, ":")
-    str(df)  # Display the structure of the data frame
+    str(df)
   }
 
-  return(result_list)  # Return the list of data frames
+  return(result_list)
 }
 
 
